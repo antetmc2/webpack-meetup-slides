@@ -3,6 +3,8 @@ export { swiss as theme } from 'mdx-deck/themes'
 import { Appear } from 'mdx-deck'
 import { CodeSurfer } from "mdx-deck-code-surfer"
 import Code from 'mdx-code';
+import { Invert } from 'mdx-deck/layouts'
+
 
 # Introduction to Packing and Building Apps with Webpack 4
 ### Ante Tomic, .NET Software Engineer (Infobip)
@@ -49,6 +51,11 @@ import { Image } from 'mdx-deck'
 <img src="today-issues.png" style={{
   width: '56vw'
 }}/>
+
+```notes
+Mention issues present today. Even thought we have a lot of options for web management, we have issues like a lot of files, order of adding stylesheets and 
+scripts into HTML, file optimization and more. We have most popular solution for that - Webpack.
+```
 
 ---
 
@@ -289,7 +296,7 @@ merge( { a: [1], b: 5, c: 20, e: {i: 25} }, { a: [2], b: 10, d: 421, e: {j: 28} 
 ---
 
 <CodeSurfer
-  title="Loading files"
+  title="Splitting code"
   code={require("!raw-loader!./webpack-snippets/08-splitting-chunks.js")}
   showNumbers
     steps={[
@@ -299,5 +306,111 @@ merge( { a: [1], b: 5, c: 20, e: {i: 25} }, { a: [2], b: 10, d: 421, e: {j: 28} 
     { lines: [31], notes: 'And in HTML Webpack Plugin we can define which chunks should be used' },
   ]}
 />
+
+---
+
+# Why should i use webpack when I have Grunt and Gulp which can do the same thing?
+
+---
+
+export default Invert
+
+<img src="orly.jpg" style={{
+  width: '92vw',
+}}/>
+
+---
+
+export default Invert
+
+<img src="webpack-bundling-2.png" style={{
+  width: '72vw',
+}}/>
+
+---
+
+export default Invert
+
+<img src="gulp-grunt.png" style={{
+  width: '82vw',
+}}/>
+
+---
+
+# Parcel vs. Webpack?
+## When to use each one?
+* Development time, complexity, support?
+
+<div style={{
+  float: 'left',
+  left: 0,
+  width: '43vw',
+  marginTop: '8vh'
+}}>
+  <img src='parcel-logo.png' style={{
+    width: '38vw'
+  }} />
+</div>
+<div style={{
+  float: 'left',
+  left: 0,
+  width: '43vw'
+}}>
+  <img src='webpack-logo.png' />
+</div>
+
+---
+
+<div style={{
+  float: 'left',
+  left: 0,
+  width: '42vw',
+  color: 'green',
+  fontSize: '4.3vmin',
+}}>
+  <span style={{
+    fontSize: '6vmin',
+  }}>😀👍</span>
+  <ul>
+    <li>Customizeable</li>
+    <li>Good documentation</li>
+    <li>No worrying about „including all possible dependencies”</li>
+    <li>Can optimize everything</li>
+    <li>Big community</li>
+  </ul>
+</div>
+<div style={{
+  float: 'left',
+  width: '42vw',
+  color: 'darkred',
+  fontSize: '4.3vmin',
+}}>
+  <span style={{
+    fontSize: '6vmin',
+  }}>🙄👎</span>
+  <ul>
+    <li>Gets the rep for being „too complicated”</li>
+    <li>Supports only ES2015 out of the box</li>
+    <li>Requires configuration in most cases</li>
+    <li>Some of the features trickier to set up</li>
+  </ul>
+</div>
+
+---
+
+<div style={{
+    fontSize: '9vmin',
+    marginBottom: 20,
+    textAlign: 'center'
+  }}>👏👏👏🙇</div>
+<div style={{
+    fontSize: '6vmin',
+    marginBottom: 30,
+  }}>Thank you! Any questions?</div>
+<div style={{
+    fontSize: '6vmin',
+    marginBottom: 30,
+    color: 'dimgrey'
+  }}>A.Tomic@infobip.com</div>
 
 ---
