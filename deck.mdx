@@ -42,6 +42,10 @@ import { Invert } from 'mdx-deck/layouts'
   </div>
 </Appear>
 
+```notes
+From early 90s -> first website with only HTML. First JavaScript, then CSS and we got the websites like one on the right. There was successes and failures, but advancement of Web allowed us to have not web pages, but web applications.
+```
+
 ---
 
 import { Image } from 'mdx-deck'
@@ -54,8 +58,7 @@ import { Image } from 'mdx-deck'
 }}/>
 
 ```notes
-Mention issues present today. Even thought we have a lot of options for web management, we have issues like a lot of files, order of adding stylesheets and 
-scripts into HTML, file optimization and more. We have most popular solution for that - Webpack.
+Mention issues present today. Even thought we have a lot of options for web management, we have issues like a lot of files, order of adding stylesheets and scripts into HTML, file optimization and more. We have most popular solution for that - Webpack.
 ```
 
 ---
@@ -82,15 +85,51 @@ scripts into HTML, file optimization and more. We have most popular solution for
   </span>
 </div>
 
+```notes
+Webpack -> module bundler -> prepares files to include everything necessary for opening a web page. 
+It takes entry files, processes them and checks what does bundle need and which file types need to be processed. 
+Because of that, it knows what is necessary first and everything is automatic. Example from pic
+```
+
 ---
 
 # Sample project
 
-* Node.JS
-* Folder of any name
+<Appear>
+  <div style={{
+    textAlign: 'right',
+    float: 'left',
+    width: '20vw',
+    marginRight: '2vw',
+    marginBottom: '6vh',
+  }}>
+    <img src="node-js.png" style={{
+      width: '15vw',
+    }}/>
+  </div>
+  <div style={{
+    textAlign: 'left',
+    float: 'left',
+    width: '15vw',
+    marginBottom: '6vh',
+  }}>
+    <img src="folder.png" style={{
+      width: '10vw',
+    }}/>
+  </div>
+  <div>
+    <pre style={{
+      display: 'unset'
+    }}>
+      <code>npm init -y</code>
+    </pre>
+  </div>
+</Appear>
 
-```
-npm init -y
+
+```notes
+Node.JS -> because of simplicity, environment which allows running JavaScript on backend, available everywhere including .NET
+We will create a Node.JS application. Create folder, open console, npm init -y (no answering questions, quickly creating and skipping questions)
 ```
 
 ---
