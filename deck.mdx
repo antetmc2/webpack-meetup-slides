@@ -242,6 +242,18 @@ npm i @babel/core babel-loader @babel/preset-env -D
   ]}
 />
 
+```notes
+1) Returning to Webpack config
+2) Imports (mention we have to do that whenever we use something not in string)
+3) Module --> rules - We will define rules for compiling different file types
+4) Defining how to compile JavaScript
+5) Regex to recognize necessary files, in this case any js or jsx files
+6) Includes/Excludes which can help speed up development by telling which folders need to be checked
+7) Defining which loaders to uzse
+8) Since we installed Babel, we will use babel-loader
+9) Any additional options, here we wanna make all JavaScript syntax options available
+```
+
 ---
 
 <CodeSurfer
@@ -256,6 +268,14 @@ npm i @babel/core babel-loader @babel/preset-env -D
     { lines: [17], notes: 'Telling Webpack to automatically include only polyfills necessary for opening a page' },
   ]}
 />
+
+```notes
+1) Intalling core-js which contains polyfills, Babel needs it for babel-polyfill
+2) Returning to Webpack configuration
+3) Replacing @babel/preset-env with an array of options, second object parameter contains options
+4) First we are using browserslist where we can define which browsers should be supported
+5) Then with useBuiltIns we tell Webpack to automatically include only necessary polyfills
+```
 
 ---
 
@@ -273,6 +293,16 @@ npm i @babel/core babel-loader @babel/preset-env -D
     { lines: [23], notes: 'This basically means style(css(CODE)), like LIFO!' },
   ]}
 />
+
+```notes
+1) Returning to Webpack config
+2) We are adding the new rule we will use for CSS and where we will check only styles folder
+3) Like you can see in this step, we are doing what we have just mentioned
+4) But we have the new situation we didn't have before - 2 loaders
+5) Basically we are using something similar to LIFO. First we need to take code and make it readable by using css-loader
+6) And then we take that code and paste it into HTML as style tag
+7) And as I said, this is basically like doing LIFO because last loader added to the list is first one executed
+```
 
 ---
 
@@ -292,6 +322,18 @@ npm i @babel/core babel-loader @babel/preset-env -D
     { range: [37, 41], notes: 'And we only need to tell Webpack to optimize files!' },
   ]}
 />
+
+```notes
+1) Returning to Webpack config
+2) First we will extracting CSS into the separate CSS file we will include
+3) As usual, we are first including the necessary dependency
+4) And we are replacing style-loader with mini-css-extract-plugin's loader
+5) After that, we have to include mini-css-extract-plugin's plugin where we define the necessary settings, in this case we need only the filename.
+6) And now we need to minimize the CSS for production and as usual, we need to include the necessary dependency
+7) We are also defining the new property: optimization
+8) And since we are minimizing the files, we need minimizer property
+9) Also, we don't need any additional settings, so we just need to tell Webpack to optimize files and it will automatically do that.
+```
 
 ---
 
