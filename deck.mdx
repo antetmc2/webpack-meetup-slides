@@ -355,6 +355,19 @@ npm i @babel/core babel-loader @babel/preset-env -D
   ]}
 />
 
+```notes
+1) Returning to Webpack config
+2) After adding CSS, we now need to define what should Webpack do with images
+3) As usual, we are first defining the file regex and includes/excludes
+4) The loader we will use is url-loader and let's check why we are not using file-loader
+5) This depends on options we are passing and there are several useful
+6) We are defining the limit for when will loader use url-loader. If file is higher than the limit, fallback loader will be used which is url-loader in this case
+7) But before we run this configuration, let's remember that CSS is not saved in same folder as JavaScript files
+8) And for simplicity, let's assume that all images will be in CSS
+9) So, we will define publicPath as being one level up, so that necessary images can be linked inside of CSS
+10) And then at the end, we define which name we want
+```
+
 ---
 
 # Did anyone else notice in the beginning that configuration in 1 file is getting quite lengthy, how can we sort this out?
@@ -389,6 +402,16 @@ merge( { a: [1], b: 5, c: 20, e: {i: 25} }, { a: [2], b: 10, d: 421, e: {j: 28} 
     { lines: [31], notes: 'And in HTML Webpack Plugin we can define which chunks should be used' },
   ]}
 />
+
+```notes
+1) There are a lot more things we can add to Webpack
+2) One of the most common parts is splitting chunks which is new version of CommonsChunkPlugin from Webpack 3.
+We are adding the new property inside optimization called splitChunks. We are first saying to split all common parts available on build  time.
+Then we are defining what groups we want to use. We are simple here, we want file called vendors with everything from node_modules.
+3) First we are defining entry points in way we define which file names we want and which files we want to include.
+Then we define output where we say where should our files be saved and which filename should be used.
+4) And then at the end wer should just control what should our HTML file contain and we can do that by defining which chunks to use.
+```
 
 ---
 
