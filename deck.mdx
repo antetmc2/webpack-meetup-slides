@@ -1,4 +1,4 @@
-export { swiss as theme } from 'mdx-deck/themes'
+export { infobip as theme } from './themes'
 
 import { Appear } from 'mdx-deck'
 import { CodeSurfer } from "mdx-deck-code-surfer"
@@ -168,6 +168,7 @@ What else do we need? Apart from code example, nothing. :) So, that's it, we're 
   showNumbers
   steps={[
     { notes: 'Adding the html-webpack-plugin' },
+    { notes: 'Create webpack.config.js file (wherever package.json is)!' },
     { lines: [1], notes: 'Before this: npm i -D html-webpack-plugin!' },
     { lines: [4, 8], notes: 'All plugins we use go under plugins' },
     { range: [5, 7], notes: 'Defining the html-webpack-plugin' },
@@ -176,7 +177,8 @@ What else do we need? Apart from code example, nothing. :) So, that's it, we're 
 
 ```notes
 1) Html-webpack-plugin
-2) Installing dependency
+2) We have to add webpack.config.js file because we have to configure this. Webpack automatically looks for webpack.config.js file in root folder of project wherever package.json is.
+3) Installing dependency
 3) All plugins are under plugins
 4) Now defining html-webpack-plugin, here we need only title right now
 ```
@@ -267,7 +269,7 @@ So, as we saw, const is not transformed to new JavaScript syntax. The issue is t
 
 ---
 
-<CodeSurfer
+<!-- <CodeSurfer
   title="What about IE11, etc.? Polyfills!"
   code={require("!raw-loader!./webpack-snippets/04-adding-polyfills.js")}
   showNumbers
@@ -288,7 +290,7 @@ So, as we saw, const is not transformed to new JavaScript syntax. The issue is t
 5) Then with useBuiltIns we tell Webpack to automatically include only necessary polyfills
 ```
 
----
+--- -->
 
 <CodeSurfer
   title="Adding styles"
@@ -317,7 +319,7 @@ So, as we saw, const is not transformed to new JavaScript syntax. The issue is t
 
 ---
 
-<CodeSurfer
+<!-- <CodeSurfer
   title="Extracting and optimizing CSS"
   code={require("!raw-loader!./webpack-snippets/06-extracting-css.js")}
   showNumbers
@@ -346,7 +348,7 @@ So, as we saw, const is not transformed to new JavaScript syntax. The issue is t
 9) Also, we don't need any additional settings, so we just need to tell Webpack to optimize files and it will automatically do that.
 ```
 
----
+--- -->
 
 <CodeSurfer
   title="Loading files"
@@ -363,6 +365,7 @@ So, as we saw, const is not transformed to new JavaScript syntax. The issue is t
     { lines: [34], notes: 'In this case, we assume that our project will have images in CSS, ' },
     { lines: [34], notes: 'So we define public path which will be appended before our file' },
     { lines: [35], notes: 'And at the end we assign desired name ... :)' },
+    { notes: 'Let\'s first look at the file ...' },
   ]}
 />
 
@@ -402,7 +405,7 @@ merge( { a: [1], b: 5, c: 20, e: {i: 25} }, { a: [2], b: 10, d: 421, e: {j: 28} 
 
 ---
 
-<CodeSurfer
+<!-- <CodeSurfer
   title="Splitting code"
   code={require("!raw-loader!./webpack-snippets/08-splitting-chunks.js")}
   showNumbers
@@ -424,7 +427,7 @@ Then we define output where we say where should our files be saved and which fil
 4) And then at the end wer should just control what should our HTML file contain and we can do that by defining which chunks to use.
 ```
 
----
+--- -->
 
 # Why should i use webpack when I have Grunt and Gulp which can do the same thing?
 
