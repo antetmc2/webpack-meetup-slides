@@ -162,8 +162,12 @@ What else do we need? Apart from code example, nothing. :) So, that's it, we're 
 
 ---
 
+import { infobipCode } from './themes'
+
+
 <CodeSurfer
   title="html-webpack-plugin"
+  theme={infobipCode}
   code={require("!raw-loader!./webpack-snippets/01-html.js")}
   showNumbers
   steps={[
@@ -193,7 +197,7 @@ npm i webpack-dev-server -D
 
 And then update _package.json_:
 
-```
+```json
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production"

@@ -1,17 +1,17 @@
 import base from 'mdx-deck/themes'
 
-const orange = '#ffe2ce'
-const black = '#000'
+const background = '#efe8e3'
+const textColor = '#000'
 const blue = '#2d5dd7'
-const red = '#f00'
+const linkColor = '#d11414'
 
 export default {
   ...base,
   font: 'Roboto, Helvetica, Arial, sans-serif',
   colors: {
-    text: black,
-    background: orange,
-    link: red
+    text: textColor,
+    background: background,
+    link: linkColor
   },
   css: {
     textAlign: 'left',
