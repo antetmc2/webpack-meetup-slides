@@ -13,6 +13,8 @@ export default {
     background: background,
     link: linkColor
   },
+  transitionTimingFunction: 'ease-in-out',
+  transitionDuration: '0.35s',
   css: {
     textAlign: 'left',
     fontSize: '16px',
@@ -23,5 +25,5 @@ export default {
       minWidth: '80vw',
       minHeight: '60vh'
     }
-  }
+  },
 }
