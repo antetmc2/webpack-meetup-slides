@@ -11,47 +11,9 @@ import { Invert } from 'mdx-deck/layouts'
 ### http://bit.ly/WebpackDotNetMeetup
 ---
 
-## How did everything start?
-<Appear>
-  <div style={{
-    float: 'left',
-    left: 0,
-    width: '50%',
-  }}>
-    <img src="first-web.png" style={{
-      width: '38vw',
-      height: '35vh'
-    }}/>
-  </div>
-  <div style={{
-      float: 'left',
-      width: '50%',
-  }}>
-    <img src="funny-website.jpg" style={{
-      width: '38vw',
-      height: '35vh'
-    }}/>
-  </div>
-  <div style={{
-      float: 'left',
-      width: '50%',
-  }}>
-    <img src="modern-web.png" style={{
-      width: '38vw',
-      height: '37vh'
-    }}/>
-  </div>
-</Appear>
-
-```notes
-From early 90s -> first website with only HTML. First JavaScript, then CSS and we got the websites like one on the right. There was successes and failures, but advancement of Web allowed us to have not web pages, but web applications.
-```
-
----
-
 import { Image } from 'mdx-deck'
 
-# Today's issues?
+# Issues with Web Development?
 
 <img src="today-issues.png" style={{
   width: '50vw',
@@ -59,7 +21,7 @@ import { Image } from 'mdx-deck'
 }}/>
 
 ```notes
-Mention issues present today. Even thought we have a lot of options for web management, we have issues like a lot of files, order of adding stylesheets and scripts into HTML, file optimization and more. We have most popular solution for that - Webpack.
+Today Web apps are getting smarter and bigger and more complex. Even thought we have a lot of options for web management, we have issues like many "stuff" for using, a lot of files, order of adding stylesheets and scripts into HTML, file optimization and more. We have a solution which can help - Webpack.
 ```
 
 ---
@@ -129,8 +91,7 @@ Because of that, it knows what is necessary first and everything is automatic. E
 
 
 ```notes
-Node.JS -> because of simplicity, environment which allows running JavaScript on backend, available everywhere including .NET
-We will create a Node.JS application. Create folder, open console, npm init -y (no answering questions, quickly creating and skipping questions)
+We will create a Node.JS application. Node.JS -> because of simplicity, environment which allows running JavaScript on backend. Create folder, open console, npm init -y (no answering questions, quickly creating and skipping questions)
 ```
 
 ---
@@ -155,12 +116,36 @@ npm i webpack webpack-cli -D
 </Appear>
 
 ```notes
-What else do we need to do? First we need to call npm install or shorter npm i, write libraries we want to install and write if we wanna add to dependencies or devDependencies.
-Here we need to install webpack which is the main NPM library which contains everything necessary for Webpack and webpack-cli which contains all Webpack CLI commmands.
+What else do we need to do? First we need to call npm install or shorter npm i where we install necessary dependencies.
+Here we need to install webpack package with everything necessary for Webpack and webpack-cli which contains all Webpack CLI commmands.
 What else do we need? Apart from code example, nothing. :) So, that's it, we're done for today and time for pizza haha. Just kidding, let's see the example. :)
 ```
 
 ---
+
+# webpack-dev-server
+
+```
+npm i webpack-dev-server -D
+```
+
+And then update _package.json_:
+
+```json
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
+  },
+```
+
+* HTML?
+
+```notes
+So, now when we have a JavaScript file, what does do we need? We need an HTML file to process and use this script. But we need to think about one more thing. If we add only HTML, we will have to always write some code, save the file, run Webpack again, click F5 in Browser and repeat this again. There is one more thing we could use for developing and that is development server or more precisely webpack-dev-server because we want better development, automatic reloading and serving files on some location. After we install the devDependency, all we have to do is define run scripts. It is recommended to use webpack-dev-server for development only, while for production you should use more permanent solution like Apache or something similar. We will also pass the mode and now the only thing left to do is define how to fetch HTML.
+```
+
+---
+
 
 import { infobipCode } from './themes'
 
@@ -189,25 +174,8 @@ import { infobipCode } from './themes'
 
 ---
 
-# webpack-dev-server
-
-```
-npm i webpack-dev-server -D
-```
-
-And then update _package.json_:
-
-```json
-  "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
-  },
-```
-
----
-
 <CodeSurfer
-  title="Or we can modify webpack-dev-server a little bit :)"
+  title="We can also modify webpack-dev-server :)"
   code={require("!raw-loader!./webpack-snippets/02-webpack-dev-server.js")}
   showNumbers
     steps={[
